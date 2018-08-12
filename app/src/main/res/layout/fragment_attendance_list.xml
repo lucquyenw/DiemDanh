@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pc.attendance.views.fragments.AttendanceListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_horizontal_margin_small"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_horizontal_margin_small"
+            android:background="@drawable/oval_background">
+            <TextView
+                android:text="Chọn ngày: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/activity_horizontal_margin_small"
+                android:textSize="20dp"/>
+            <Spinner
+                android:id="@+id/spinnerDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="20dp"
+                android:gravity="center"
+                android:text="Danh sách sinh viên có trong ngày này"/>
+
+            <Button
+                android:id="@+id/btnUpload"
+                android:drawableLeft="@drawable/ic_upload"
+                android:text="Upload"
+                android:layout_width="wrap_content"
+                android:textColor="#78d9ff"
+                android:background="@color/colorGhostWhite"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_attendance"
+        android:paddingRight="@dimen/activity_horizontal_margin_small"
+        android:paddingLeft="@dimen/activity_horizontal_margin_small"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</FrameLayout>

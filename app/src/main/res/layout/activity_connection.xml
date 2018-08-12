@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pc.attendance.viewModels.ConnectionVM"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_connection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".views.ConnectionActivity">
+        <LinearLayout
+            android:id="@+id/layoutURl"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:text="@string/ip_address"
+                    android:textSize="8pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:hint="@string/ip_address_hint"
+                    android:text="@={viewModel.url}"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:text="@string/colon"
+                    android:textSize="8pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:hint="@string/port_hint"
+                    android:text="@={viewModel.port}"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btn_save_address"
+                    android:background="@drawable/button_template"
+                    android:text="@string/save_ip_address"
+                    android:textColor="@color/colorGhostWhite"
+                    android:onClick="@{(v) -> viewModel.onSaveClick(v)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:id="@+id/connect_server_propress"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/connection_status_textview"
+            android:text="@={viewModel.status}"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/connect_server_propress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"/>
+        <Button
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/connection_status_textview"
+            android:background="@drawable/ic_reload"
+            android:onClick="@{(v) -> viewModel.onReloadUrl(v)}"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:text="@string/offline_mode"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/colorPrimary"
+            android:onClick="@{(v) -> viewModel.changeUrl(v)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</layout>

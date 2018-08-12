@@ -1,0 +1,2 @@
+include ':app', ':androidlibsvm'
+include ':openCVLibrary300'

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pc.attendance.views.AddPersonActivity"
+    android:keepScreenOn="true">
+
+
+    <com.example.pc.attendance.helpers.CustomCameraView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/AddPersonPreview"
+        app:show_fps="true"
+        app:camera_id="any" />
+    <ImageButton
+        android:src="@drawable/ic_change_camera"
+        android:id="@+id/btnChangeCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_oval"
+        />
+</RelativeLayout>

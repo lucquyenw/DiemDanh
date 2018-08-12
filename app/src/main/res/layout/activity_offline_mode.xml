@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pc.attendance.views.OfflineModeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_small"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin_small"
+        android:orientation="vertical"
+        android:background="@drawable/oval_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin_small"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_small"
+                android:text="Môn học:"/>
+            <Spinner
+                android:id="@+id/spin_offMode_subjectName"
+                android:layout_marginStart="@dimen/activity_horizontal_margin_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin_small"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin_small"
+                android:text="Mã lớp: "/>
+            <TextView
+                android:id="@+id/spin_offMode_ClassGroup"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_small"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin_small"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_OffMode_Attendance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Điểm danh"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin_small"
+        android:layout_marginStart="@dimen/activity_horizontal_margin_small"
+        android:background="@drawable/oval_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_small"
+                android:text="Danh sách sinh viên" />
+
+            <Button
+                android:id="@+id/btn_OffMode_train"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Train" />
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc_offMode_studentList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/activity_horizontal_margin_small"
+            android:paddingLeft="@dimen/activity_horizontal_margin_small"
+            android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>
